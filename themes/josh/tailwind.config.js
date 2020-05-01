@@ -19,8 +19,15 @@ module.exports = {
                 'community': 'rgb(62, 95, 106)',
             },
             margin: {
-                '1/12': '8.333333%',
-            }
+                '1/12vw': '8.333333vw',
+            },
+            spacing: {
+                'vh100': '100vh',
+                'vw100': '100vw',
+                'minusvh100': '-100vh',
+                '7': '1.75rem',
+                'minus8perc': '-8%',
+            },
         }
     },
     variants: {

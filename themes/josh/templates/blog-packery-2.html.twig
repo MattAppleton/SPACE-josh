@@ -30,7 +30,7 @@
         <div class="pl-4 pt-4 bg-gray-200">{% include 'partials/breadcrumbs.html.twig' %}</div>
         {% endif %} #}
 
-        <div class="packerygrid mx-auto px-4 ml-1/12vw">
+        <div class="packerygridnogutter mx-auto ml-20">
 
             {% for child in collection %}
             {# {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %} #}
@@ -38,12 +38,12 @@
             {#! BLOG TILE below #}
 
             
-            <div class="{{child.header.packerytilewidth}} packerygrid-item m-4 bg-gray-100">
+            <div class="{{child.header.packerytilewidth}} packerygridnogutter-item p-4 cursor-move">
 
                 {% set image = child.media.all|first %}
                 {% if image %}
 
-                <div class="tile-inner p-4 border rounded-lg border-gray-500 {{child.header.colorpick}}">
+                <div class="tile-inner p-4 border bg-white border-black {{child.header.colorpick}}">
 
                     <div class="tile-pic pb-3">
                         <a href="{{ child.url }}"><img src="{{ image.url }}"></a>
@@ -64,15 +64,15 @@
                         </div>
 
                         {# ! tile copy #}
-                        <div class="lg:text-2xl text-1xl bold pb-3 pt-2 flex-1 antialiased">
+                        <div class="lg:text-2xl text-black text-1xl bold pt-3 flex-1 antialiased">
                             {% if child.summary != child.content %}
                             {{ child.summary|raw }}{# {{child.header.packerytilewidth|raw}} #}
                             {% else %}
                             {{ child.content|raw }}
                             {% endif %}
                             <br>
-                            {{child.header.packerytilewidth|raw}}
-                            {{child.header.tilesize}}
+                            {# {{child.header.packerytilewidth|raw}}
+                            {{child.header.tilesize}} #}
                         </div>
 
                         {# ! tile taxonomy #}

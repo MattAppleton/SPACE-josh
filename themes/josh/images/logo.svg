@@ -1,13 +1,17 @@
-<nav id="navigation" class="w-vh100 h-20 border-b text-center fixed border-black z-30 top-0 left-0 bold text-black text-2xl transform -rotate-90 origin-top-left translate-y-vh100 bg-white">
-    <ul class="font-light float-left w-3/4 pt-7">
-        {% for page in pages.children.visible %}
-        <li class="no-underline inline-block pl-10">
-            <a class="w-full h-full" href="{{ page.url }}">{{ page.menu }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-    <svg class="inline-block float-right absolute transform -translate-x-20 pt-7">
-	<path class="fixed top-0 left-0" clip-path="url(#SVGID_2_)" fill="#424242" d="M134.251,20.043V0h-5.054v1.836h3.023v16.371h-3.023v1.836H134.251z
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="134.251px" height="21.145px" viewBox="0 0 134.251 21.145" enable-background="new 0 0 134.251 21.145"
+	 xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0.001" width="134.251" height="21.144"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#424242" d="M134.251,20.043V0h-5.054v1.836h3.023v16.371h-3.023v1.836H134.251z
 		 M102.546,10.108h-4.86c0.022-0.734,0.195-1.253,0.583-1.749c0.39-0.52,1.06-0.864,1.88-0.864c0.777,0,1.338,0.259,1.705,0.647
 		C102.285,8.618,102.523,9.266,102.546,10.108 M105.244,11.318c0.043-1.404-0.15-2.68-0.971-3.91
 		c-0.929-1.403-2.44-2.073-4.104-2.073c-1.534,0-2.743,0.562-3.585,1.425c-1.08,1.103-1.62,2.7-1.62,4.493
@@ -37,7 +41,5 @@
 		c-0.778,0-1.274-0.151-1.706-0.496c-0.346-0.281-0.605-0.821-0.605-1.318h-2.527c0,1.059,0.54,1.987,1.188,2.613
 		c0.929,0.886,2.203,1.296,3.628,1.296c1.534,0,2.937-0.388,3.845-1.296C38.185,15.248,38.573,14.449,38.573,13.369 M5.054,20.043
 		v-1.836H2.03V1.836h3.024V0H0v20.043H5.054z"/>
+</g>
 </svg>
-
-    {% include 'partials/langswitcher.html.twig' %}
-</nav>
