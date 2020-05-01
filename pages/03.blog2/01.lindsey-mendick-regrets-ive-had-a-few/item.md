@@ -14,5 +14,5 @@ content:
     url_taxonomy_filters: '1'
 ---
 
-On at SPACE Ilford:
+Now on at SPACE Ilford:
 Lindsey Mendick: Regrets, I've had a few
