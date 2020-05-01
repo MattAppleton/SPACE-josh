@@ -1,0 +1,249 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/base.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/base";
+ */
+@tailwind base;
+
+/* Akkurat Light */
+@font-face {
+  font-family: "Akk-light";
+  src: url("../fonts/AkkuratPro-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Akk-reg";
+  src: url("../fonts/AkkuratPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Akk-mono";
+  src: url("../fonts/AkkuratMonoPro.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Akk-bold";
+  src: url("../fonts/AkkuratPro-Bold.otf") format("opentype");
+  font-style: normal;
+}
+
+.light {
+  font-family: "Akk-light";
+  font-style: normal;
+}
+
+.reg {
+  font-family: "Akk-reg";
+}
+
+.mono {
+  font-family: "Akk-mono";
+  font-style: normal;
+}
+
+
+.bold {
+  font-family: "Akk-bold";
+  font-style: normal;
+}
+
+
+/*! old space colours */
+
+.studios {
+  @apply bg-studios;
+}
+
+.oppor {
+  @apply bg-oppor;
+}
+
+.whats {
+  @apply bg-whats;
+}
+
+.community {
+  @apply bg-community;
+}
+
+/**
+  * This injects any component classes registered by plugins.
+  *
+  * If using `postcss-import`, use this import instead:
+  *
+  * @import "tailwindcss/components";
+  */
+
+@tailwind components;
+
+/**
+  * Here you would add any of your custom component classes; stuff that you'd
+  * want loaded *before* the utilities so that the utilities could still
+  * override them.
+  *
+  * Example:
+  *
+  * .btn { ... }
+  * .form-input { ... }
+  *
+  * Or if using a preprocessor or `postcss-import`:
+  *
+  * @import "components/buttons";
+  * @import "components/forms";
+  */
+
+/* purgecss start ignore */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5 {
+  @apply text-indigo-600;
+  font-family: "Akk-light";
+}
+
+article h1 {
+  @apply mt-4;
+  @apply mb-1;
+  @apply text-3xl;
+}
+
+article h2 {
+  @apply mt-3;
+  @apply mb-1;
+  @apply text-2xl;
+}
+
+article h3 {
+  @apply mt-2;
+  @apply mb-1;
+  @apply text-xl;
+}
+
+article h4 {
+  @apply mt-2;
+  @apply mb-1;
+  @apply text-lg;
+}
+
+article h5 {
+  @apply mt-2;
+  @apply mb-1;
+}
+
+article p {
+  @apply mb-3;
+  @apply text-lg;
+  @apply leading-relaxed;
+  hyphens: auto;
+}
+
+article ol,
+article ul {
+  @apply list-disc;
+  @apply pl-5;
+  @apply mb-3;
+}
+
+article a {
+  @apply text-indigo-600;
+}
+
+article a:hover {
+  @apply text-pink-600;
+  @apply underline;
+}
+
+blockquote {
+  @apply border-l-2;
+  @apply border-indigo-400;
+  @apply ml-3;
+  @apply pl-3;
+}
+
+code {
+  @apply bg-indigo-100;
+  @apply p-px;
+  @apply rounded;
+  @apply text-sm;
+}
+
+div.notices {
+  @apply m-2;
+  @apply p-3;
+  @apply rounded;
+}
+
+/* purgecss end ignore */
+
+/**
+  * This injects all of Tailwind's utility classes, generated based on your
+  * config file.
+  *
+  * If using `postcss-import`, use this import instead:
+  *
+  * @import "tailwindcss/utilities";
+  */
+
+@tailwind utilities;
+
+
+/*! this bit controls the special tile sizes */
+
+.tile-m {}
+
+@screen lg {
+
+  .tile-sq,
+  .tile-l,
+  .tile-w {
+    @apply col-span-2;
+  }
+
+  .tile-sq {
+    @apply row-span-2;
+  }
+
+  .tile-w .tile-inner {
+    @apply flex;
+    @apply flex-row-reverse;
+  }
+
+  .tile-w .tile-info,
+  .tile-w .tile-pic {
+    @apply w-1/2;
+  }
+
+  .tile-w .tile-info {
+    @apply pr-4;
+  }
+
+  .tile-w .tile-pic {
+    @apply pb-0;
+  }
+
+}
+
+
+
+
+/**
+  * Here you would add any custom utilities you need that don't come out of the
+  * box with Tailwind.
+  *
+  * Example :
+  *
+  * .bg-pattern-graph-paper { ... }
+  * .skew-45 { ... }
+  *
+  * Or if using a preprocessor or `postcss-import`:
+  *
+  * @import "utilities/background-patterns";
+  * @import "utilities/skew-transforms";
+  */

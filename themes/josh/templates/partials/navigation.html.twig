@@ -1,0 +1,11 @@
+<nav id="navigation" class="w-1/12 h-full border-r fixed border-black  z-30 top-0 left-0 bold text-black text-2xl bg-white">
+    <ul class="font-light h-full w-full pt-10 absolute">
+        {% for page in pages.children.visible %}
+        <li class="no-underline transform -rotate-90 static mt-20">
+            <a class="w-full h-full" href="{{ page.url }}">{{ page.menu }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% include 'partials/langswitcher.html.twig' %}
+</nav>
