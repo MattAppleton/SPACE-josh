@@ -3,6 +3,7 @@ title: 'Lindsey Mendick: Regrets, I''ve had a few'
 media_order: LindseyMendick_KateElliott_03.jpg
 tilesize: tile-m
 packerytilewidth: tile-w
+stickyposition: left
 colorpick: whats
 content:
     items: '- ''@self.children'''
