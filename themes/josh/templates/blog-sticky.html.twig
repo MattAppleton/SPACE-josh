@@ -36,10 +36,10 @@
             
             <div class="w-full min-h-screen">
 
-            {% if sticky_position == "left" %}
+            {% if sticky_position == 'left' %}
 
                 <div class="w-1/2 float-left inline-block sticky t-0 bg-red-400" >
-                    <div class="tile-pic pb-3">
+                    <div class="tile-pic pb-3 w-full">
                         <a href="{{ child.url }}"><img src="{{ image.url }}"></a>
                     </div>
                     <div class="tile-info flex flex-col">
