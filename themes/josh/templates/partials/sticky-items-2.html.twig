@@ -1,8 +1,10 @@
-                <div class="tile-pic pb-3 w-full border-t border-black">
+                    
+                <div class="border border-black">
+                    <div class="tile-pic pb-3 w-full border-t border-black">
                         <a href="{{ child.url }}"><img src="{{ image.url }}"></a>
                     </div>
                     <div class="tile-info">
-                        <div class="lg:text-2xl text-black text-1xl bold pb-5 pt-3 px-5 border-b border-black antialiased">
+                        <div class="lg:text-2xl text-black text-1xl bold pb-5 pt-3 px-5 antialiased">
                             {% if child.summary != child.content %}
                             {{ child.summary|raw }}{# {{child.header.packerytilewidth|raw}} #}
                             {% else %}
@@ -10,3 +12,4 @@
                             {% endif %}
                         </div>
                     </div>
+                </div>
