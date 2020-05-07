@@ -17,9 +17,49 @@
 {% endblock %}
 
 {% block body %}
-{# <section id="body-wrapper" class=""> #}
 
-        <div class="packerygridnogutter mx-auto ml-20 min-h-screen">
+    <div class="packerygridnogutter mx-auto ml-20 min-h-screen">
+
+    
+
+        <div class="w-1/2 min-h-screen border-black float-left inline-block" >
+            
+            {% for child in collection %}
+            {% set sticky_position = child.header.stickyposition %}
+            {% set image = child.media.all|first %}
+            {% if sticky_position == "left" %}
+                    <div class="sticky top-0 bg-white">
+                    {% include 'partials/sticky-items-2.html.twig' %}
+                    </div>
+
+            {% else %}
+            {% endif %}
+            {% endfor %}
+
+        </div>
+
+        <div class="w-1/2 min-h-screen border-l border-black inline-block float-right bg-white">
+                {% for child in collection %}
+                {% set sticky_position = child.header.stickyposition %}
+                {% set image = child.media.all|first %}
+                {% if sticky_position == "right" %}
+                    <div class="bg-white">
+                    {% include 'partials/sticky-items-2.html.twig' %}
+                    </div>
+
+                {% else %}
+                {% endif %}
+                {% endfor %}
+
+        </div>
+
+
+    </div>
+
+
+
+
+        {# <div class="packerygridnogutter mx-auto ml-20 min-h-screen">
 
             {% for child in collection %}
             
@@ -55,18 +95,12 @@
 
             
             {% endfor %}
-            
-            
-
-            
-            
-
-        </div>
+        
+        </div> #}
 
         
 
 
-{# </section> #}
 
 <script src="./user/themes/josh/node_modules/draggabilly/dist/draggabilly.pkgd.min.js"></script>
 <script src="./user/themes/josh/node_modules/packery/dist/packery.pkgd.min.js"></script>
