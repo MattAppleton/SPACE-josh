@@ -65,7 +65,7 @@
                 {% set sticky_position = child.header.stickyposition %}
                 {% set image = child.media.all|first %}
                 {% if sticky_position == "bottom" %}
-                    <div class="bg-white">
+                    <div class="bg-white w-1/3 pt-64">
                     {% include 'partials/sticky-items-2.html.twig' %}
                     </div>
 
