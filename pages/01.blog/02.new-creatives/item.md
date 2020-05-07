@@ -6,6 +6,7 @@ taxonomy:
         - 'NEED A TAG'
 tilesize: tile-m
 packerytilewidth: w-1/4
+stickyposition: right
 feed:
     limit: 10
 ---

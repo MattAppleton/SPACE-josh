@@ -9,6 +9,7 @@ hero_classes: 'text-light title-h1h2 overlay-dark-gradient hero-large parallax'
 hero_image: Hollie-Miller-Throat-of-a-Rose-Performance-to-Camera-2018-scaled.jpg
 tilesize: tile-w
 packerytilewidth: w-1/3
+stickyposition: bottom
 feed:
     limit: 10
 author: 'Tasha Maxwell'
