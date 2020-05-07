@@ -42,7 +42,7 @@
                 {% for child in collection %}
                 {% set sticky_position = child.header.stickyposition %}
                 {% set image = child.media.all|first %}
-                {% if sticky_position == "right" %}
+                {% if sticky_position != "left" %}
                     <div class="bg-white">
                     {% include 'partials/sticky-items-2.html.twig' %}
                     </div>
