@@ -18,17 +18,17 @@
 
 {% block body %}
 
-    <div class="packerygridnogutter mx-auto ml-20 min-h-screen">
+    <div class="mx-auto ml-20 min-h-screen w-full">
 
     
 
-        <div class="w-1/2 min-h-screen border-black float-left inline-block" >
+        <div class="w-2/3 min-h-screen border-black float-left inline-block sticky top-0" >
             
             {% for child in collection %}
             {% set sticky_position = child.header.stickyposition %}
             {% set image = child.media.all|first %}
             {% if sticky_position == "left" %}
-                    <div class="sticky top-0 bg-white">
+                    <div class=" bg-white">
                     {% include 'partials/sticky-items-2.html.twig' %}
                     </div>
 
@@ -38,7 +38,7 @@
 
         </div>
 
-        <div class="w-1/2 min-h-screen border-l border-black inline-block float-right bg-white">
+        <div class="w-1/3 min-h-screen border-l border-black inline-block float-right bg-white">
                 {% for child in collection %}
                 {% set sticky_position = child.header.stickyposition %}
                 {% set image = child.media.all|first %}
@@ -59,44 +59,7 @@
 
 
 
-        {# <div class="packerygridnogutter mx-auto ml-20 min-h-screen">
-
-            {% for child in collection %}
-            
-            <div class="m-0 w-full">
-
-            {% set sticky_position = child.header.stickyposition %}
-            {% set image = child.media.all|first %}
-            
-            
-
-            {% if sticky_position == "left" %}
-
-                <div class="w-1/2 border-r border-black float-left sticky top-0 bg-white" >
-                    {% include 'partials/sticky-items-2.html.twig' %}
-                </div>
-        
-
-
-            {% elseif sticky_position == "right" %}
-
-                    <div class="w-1/2 max-h-screen float-right bg-white">
-                        {% include 'partials/sticky-items.html.twig' %}
-                    </div>
-
-            </div>
-
-
-            {% else %}
-
-
-
-            {% endif %}
-
-            
-            {% endfor %}
-        
-        </div> #}
+    
 
         
 
