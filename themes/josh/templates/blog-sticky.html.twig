@@ -3,51 +3,44 @@
 {% set collection = page.collection() %}
 {% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
 {% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
-{# {% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %} #}
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 
 
 
 {% block stylesheets %}
-{# {% do assets.addCss('theme://css/bricklayer.css') %} #}
 {{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
 {{ parent() }}
-{# {% do assets.add('theme://js/bricklayer.min.js') %}
-{% do assets.add('theme://js/scopedQuerySelectorShim.min.js') %} #}
-{% endblock %}
 
-
-{% block hero %}
-{# {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content, hero_image: blog_image} %} #}
 {% endblock %}
 
 {% block body %}
-<section id="body-wrapper" class="">
-    <section class="flex-1">
+{# <section id="body-wrapper" class=""> #}
 
-        <div class="packerygridnogutter mx-auto ml-20">
+        <div class="packerygridnogutter mx-auto ml-20 min-h-screen">
 
             {% for child in collection %}
             
+            <div class="m-0 w-full">
+
             {% set sticky_position = child.header.stickyposition %}
             {% set image = child.media.all|first %}
             
-            <div class="w-full min-h-screen m-0">
+            
 
             {% if sticky_position == "left" %}
 
-                <div class="w-1/2 h-screen float-left inline-block sticky top-0 bg-red-400" >
-                    {% include 'partials/sticky-items.html.twig' %}
+                <div class="w-1/2 border-r border-black float-left sticky top-0 bg-white" >
+                    {% include 'partials/sticky-items-2.html.twig' %}
                 </div>
         
 
 
             {% elseif sticky_position == "right" %}
 
-                    <div class="w-1/2 max-h-screen float-right inline-block bg-green-400">
+                    <div class="w-1/2 max-h-screen float-right bg-white">
                         {% include 'partials/sticky-items.html.twig' %}
                     </div>
 
@@ -55,10 +48,6 @@
 
 
             {% else %}
-
-                <div class=" hidden">
-                        {% include 'partials/sticky-items.html.twig' %}
-                </div>
 
 
 
@@ -68,23 +57,16 @@
             {% endfor %}
             
             
-                    </div>
-                </div>
 
-            </div>
+            
             
 
         </div>
 
-        {# {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
-        <div id="listing-footer">
-            {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
-        </div>
-        {% endif %} #} #}
+        
 
 
-    </section>
-</section>
+{# </section> #}
 
 <script src="./user/themes/josh/node_modules/draggabilly/dist/draggabilly.pkgd.min.js"></script>
 <script src="./user/themes/josh/node_modules/packery/dist/packery.pkgd.min.js"></script>
