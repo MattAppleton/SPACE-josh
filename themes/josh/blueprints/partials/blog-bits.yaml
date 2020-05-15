@@ -54,9 +54,10 @@ form:
       help: put css rule here
       default: "left"
       options:
-        left: Left
-        right: Right
-        bottom: Bottom
+        topleft: Top Left
+        topright: Top Right
+        bottomleft: Bottom Left
+        bottomright: Bottom Right
       placeholder: " "
       size: medium
 

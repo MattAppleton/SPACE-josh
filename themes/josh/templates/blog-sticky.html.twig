@@ -28,7 +28,7 @@
             {% for child in collection %}
             {% set sticky_position = child.header.stickyposition %}
             {% set image = child.media.all|first %}
-            {% if sticky_position == "left" %}
+            {% if sticky_position == "topleft" %}
                     <div class=" bg-white">
                     {% include 'partials/sticky-items-2.html.twig' %}
                     </div>
@@ -46,7 +46,7 @@
                 {% for child in collection %}
                 {% set sticky_position = child.header.stickyposition %}
                 {% set image = child.media.all|first %}
-                {% if sticky_position == "right" %}
+                {% if sticky_position == "topright" %}
                     <div class="bg-white">
                     {% include 'partials/sticky-items-2.html.twig' %}
                     </div>
@@ -56,10 +56,13 @@
                 {% endfor %}
 
         </div>
-
-
+        
 </div>
 
+
+
+<!--
+ 
         {#! Bottom section #}
 
         <div class="w-full min-h-screen pl-20 flex flex-row bg-white">
@@ -78,7 +81,7 @@
                 {% endif %}
                 {% endfor %}
             </div>
-        </div>
+        </div> -->
 
 
     
