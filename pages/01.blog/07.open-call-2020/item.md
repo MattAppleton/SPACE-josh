@@ -6,6 +6,7 @@ taxonomy:
         - 'NEED A TAG'
 tilesize: tile-m
 packerytilewidth: w-2/5
+stickyposition: bottomleft
 colorpick: oppor
 colourpick: 'artist opportunities'
 feed:

@@ -27,6 +27,7 @@ module.exports = {
                 'minusvh100': '-100vh',
                 '7': '1.75rem',
                 'minus8perc': '-8%',
+                'vh50': '50vh',
             },
         }
     },
