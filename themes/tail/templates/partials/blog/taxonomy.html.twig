@@ -1,0 +1,7 @@
+{% if page.taxonomy.tag %}
+<span class="">
+    {% for tag in page.taxonomy.tag %}
+    <a class="bg-blue-500 pb-1 pt-2 px-2 text-white" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}#body-wrapper">{{ tag }}</a>
+    {% endfor %}
+</span>
+{% endif %}

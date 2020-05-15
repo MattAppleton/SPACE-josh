@@ -1,0 +1,8 @@
+<section id="{{ id }}" class="h-64 bg-cover" {% if hero_image %}style="background-image: url('{{ hero_image.url }}');"{% endif %}>
+    
+    <div class="container " >
+        {{ content|raw }}
+    </div>
+
+
+</section>

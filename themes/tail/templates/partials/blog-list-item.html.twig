@@ -1,0 +1,35 @@
+<div class="{{page.header.tilesize}} m-4 bg-gray-100">
+    {% set image = page.media.all|first %}
+    {% if image %}
+
+   <div class="tile-inner p-4 border rounded-lg border-gray-500">
+
+        <div class="tile-pic pb-3">
+            <a href="{{ page.url }}"><img src="{{ image.url }}"></a>
+        </div>
+        {% endif %}
+    
+        <div class="tile-info flex flex-col">
+            {# <div class="">
+                <div class="text-xs pt-3">
+                    {% include 'partials/blog/date.html.twig' %}
+                </div>
+                <div class="text-2xl pb-2">
+                    {% include 'partials/blog/title.html.twig' with {title_level: 'h5'} %}
+                </div>
+            </div> #}
+            <div class="text-2xl bold pb-3 flex-1">
+                {% if page.summary != page.content %}
+                {{ page.summary|raw }}
+                {% else %}
+                {{ page.content|raw }}
+                {% endif %}
+            </div>
+            <div id="tile-tags" class="text-xs uppercase text-right pb-1">
+                {% include 'partials/blog/taxonomy.html.twig' %}
+            </div>
+        </div>
+   </div>
+
+</div>
+
