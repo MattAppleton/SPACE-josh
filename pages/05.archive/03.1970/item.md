@@ -1,5 +1,6 @@
 ---
 title: '1970'
+media_order: '1970_SPACE_AIROffice.jpg,1970_SPACE_ArtistsMeetingatStKatherineDocks.jpg,1970_SPACE_ArtstsMeetingatStKatherinesDocks.jpg,1970_SPACE_BridgetRiley.jpg,1970_SPACE_BridgetRileyandPeterSedgley.jpg,1970_SPACE_BridgetRileyandvisitorsatStKatharine Dock_DouglasSmith.jpg,1970_SPACE_BruceLacey.jpg,1970_SPACE_ChrisCarter.jpg,1970_SPACE_TonyHillOrbal.jpg'
 packerytilewidth: w-1/4
 ---
 
