@@ -1,0 +1,108 @@
+{% extends 'partials/base.html.twig' %}
+{% set blog_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
+{% set collection = page.collection() %}
+{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
+{# {% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %} #}
+{% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
+
+{% block stylesheets %}
+{# {% do assets.addCss('theme://css/bricklayer.css') %} #}
+{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{# {% do assets.add('theme://js/bricklayer.min.js') %}
+{% do assets.add('theme://js/scopedQuerySelectorShim.min.js') %} #}
+{% endblock %}
+
+
+{% block hero %}
+{# {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content, hero_image: blog_image} %} #}
+{% endblock %}
+
+{% block body %}
+<section id="body-wrapper" class="">
+    <section class="flex-1">
+
+        <div class="w-full min-h-screen">
+
+            {% for child in collection %}
+  
+            
+            <div class="w-full min-h-screen">
+
+                {% set image = child.media.all|first %}
+                {% if image %}
+
+                <div class="">
+
+                    <div class="">
+                        <a href="{{ child.url }}"><img src="{{ image.url }}"></a>
+                    </div>
+                {% endif %}
+
+                    <div class="">
+
+                        {# !date and title can be switched on here #}
+
+                        <div class="">
+                            {# <div class="text-xs pt-3 pb-3 mono">
+                                {% include 'partials/blog/date.html.twig' %}
+                            </div> #}
+                            {# <div class="text-2xl pb-2">
+                               {{ child.title }}
+                            </div> #}
+                        </div>
+
+                        {# ! tile copy #}
+                        <div class="lg:text-2xl text-black text-1xl bold pt-3 flex-1 antialiased">
+                            {% if child.summary != child.content %}
+                            {{ child.summary|raw }}{# {{child.header.packerytilewidth|raw}} #}
+                            {% else %}
+                            {{ child.content|raw }}
+                            {% endif %}
+                            <br>
+                            {# {{child.header.packerytilewidth|raw}}
+                            {{child.header.tilesize}} #}
+                        </div>
+
+                        {# ! tile taxonomy #}
+                        {# <div id="tile-tags" class="mono uppercase text-right tracking-widest antialiased pb-1">
+
+                            {% if child.taxonomy.tag %}
+                            <span class="">
+                                {% for tag in child.taxonomy.tag %}
+                                <a class="bg-blue-500 pb-1 pt-2 px-2 text-white"
+                                    href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}#body-wrapper">{{ tag }}</a>
+                                {% endfor %}
+                            </span>
+                            {% endif %}
+
+                        </div> #}
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+        <div id="listing-footer">
+            {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+        </div>
+        {% endif %}
+
+
+    </section>
+</section>
+
+<script src="./user/themes/josh/node_modules/draggabilly/dist/draggabilly.pkgd.min.js"></script>
+<script src="./user/themes/josh/node_modules/packery/dist/packery.pkgd.min.js"></script>
+<script src="./user/themes/josh/javascript/packery_01.js"></script>
+
+
+
+{% endblock %}
