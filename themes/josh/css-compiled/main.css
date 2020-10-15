@@ -658,6 +658,10 @@ video {
   font-style: normal;
 }
 
+.scroll-title-active {
+  display: inline;
+}
+
 /*! old space colours */
 
 .studios {
