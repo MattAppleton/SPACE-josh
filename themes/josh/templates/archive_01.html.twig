@@ -12,6 +12,8 @@
 {% endblock %}
 
 {% block javascripts %}
+
+
 {{ parent() }}
 {# {% do assets.add('theme://js/bricklayer.min.js') %}
 {% do assets.add('theme://js/scopedQuerySelectorShim.min.js') %} #}
@@ -29,9 +31,13 @@
         <div class="w-full min-h-screen">
 
             {% for child in collection %}
-  
+                
+                <div id="{{ child.title }}-scroll-title" class="fixed flex top-0 left-0 w-screen h-screen bg-black opacity-25 z-50 items-center hidden">
+                    <p class="flex-1 w-full text-center text-white text-6xl">{{ child.title }}</p>
+                </div>
             
-            <div class="w-full flex pt-10  pl-20 pr-10 mb-10">
+            <div id="{{ child.title }}-container" class="w-full flex pt-10  pl-20 pr-10 mb-10 scrollelements">
+                
             
                 <div class="w-2/3 pl-5 packerygrid pt-10">
                 {% for media in child.media %}
@@ -44,14 +50,14 @@
 
                         {# !date and title can be switched on here #}
 
-                        <div class="text-black bold text-xl w-full sticky top-0 pt-10 bg-white">
+                        <div id="{{ child.title }}" class="text-black bold text-xl w-full sticky sticky-scroll-alert top-0 pt-10 bg-white">
                             
                             <h2 class="pl-10 pb-3" >{{ child.title }}</h2>
                             <div class="border-b border-black w-11/12 m-auto text-center"></div>
                         </div>
 
                         {# ! tile copy #}
-                        <div class="lg:text-2xl text-black text-1xl pt-3 h-full  antialiased pl-10 pt-5">
+                        <div id="{{ child.title }}-trigger" class="lg:text-2xl text-black text-1xl pt-3 h-full  antialiased pl-10 pt-5">
                             {{ child.content }}
                         </div>
 
@@ -74,9 +80,41 @@
 
 </section>
 
+
+
 <script src="./user/themes/josh/node_modules/draggabilly/dist/draggabilly.pkgd.min.js"></script>
 <script src="./user/themes/josh/node_modules/packery/dist/packery.pkgd.min.js"></script>
+
 <script src="./user/themes/josh/javascript/packery_01.js"></script>
+<script src="./user/themes/josh/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="./user/themes/josh/node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+
+<script>
+
+var controller = new ScrollMagic.Controller();
+
+</script>
+
+{% for child in collection %}
+
+<script>
+
+var scrollduration = parseInt(document.getElementById("{{ child.title }}-container").scrollHeight);
+var elementPosition = document.getElementById("{{ child.title }}-container").getBoundingClientRect().top;
+console.log(scrollduration);
+
+
+new ScrollMagic.Scene({duration: scrollduration, triggerHook: 'onLeave' })
+					.offset(elementPosition).triggerElement("#{{ child.title }}-trigger").setClassToggle("#{{ child.title }}-scroll-title", "hidden")
+                    .addIndicators({name: "{{ child.title }}"})
+                    .addTo(controller);
+
+
+
+</script>
+
+{% endfor %}
+
 
 
 

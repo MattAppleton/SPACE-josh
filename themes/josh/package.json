@@ -12,6 +12,7 @@
     "packery": "^2.1.2",
     "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.1",
+    "scrollmagic": "^2.0.7",
     "tailwindcss": "^1.2.0",
     "tailwindcss-transitions": "^2.2.0"
   },
