@@ -10,7 +10,7 @@ taxonomy:
         - text
 tilesize: tile-w
 packerytilewidth: w-1/3
-stickyposition: bottomright
+stickyposition: topleft
 feed:
     limit: 10
 link: 'http://getgrav.org'
